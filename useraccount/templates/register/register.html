@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>Sign up</title>
+        <link type="text/css" rel="stylesheet" href="{% static 'dialog.css' %}">
+        
+        
+    </head>
+    <body>
+        <div style="height: 150px;">
+            <div class="logo-name">
+                <img src="{% static 'icon.png' %}" style="width: 96px;">
+                <h1>Titanus</h1>
+            </div>
+        </div>
+        <div class="nav-title-container">
+            <h1 class="nav-title">Đăng ký</h1>
+        </div>
+        <div class="container">
+            <div class="nav-box" style="height: 375px;">
+                <form class="nav-box-ui" action="." method="POST">
+                    {% csrf_token %}
+                    <div style="height: 50px;"></div>
+                    <div><input name="username" class="text-box" type="text" value='' placeholder="Tên đăng nhập"></div>
+                    <div style="height: 10px;"></div>
+                    <div><input name="email" class="text-box" type="email" value='' placeholder="Email"></div>
+                    <div style="height: 10px;"></div>
+                    <div><input name="password1" class="text-box" type="password" placeholder="Mật khẩu"></div>
+                    <div style="height: 10px;"></div>
+                    <div><input name="password2" class="text-box" type="password" placeholder="Nhập lại mật khẩu"></div>
+                    {% if error %}
+                        <div style="height:15px"><p style="height:15px;font-size:15px;justify-content: center;margin-top:10px;color:rgb(255,255,0)">{{error}}</p></div>
+                        <div style="height: 10px;"></div>
+                    {% endif %}
+                    <div class="nav-btn-div"><input class="nav-btn" type="submit" value="Đăng ký"></div>
+                    <div style="height: 10px;"></div>
+                    <div class="nav-btn-div"><a href="login.html">Đăng nhập</a></div>
+                    <div style="height: 10px;"></div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

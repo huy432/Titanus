@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    {% load static %}
+    <head>
+        <title>Login</title>
+        <meta charset="utf-8">
+        <link type="text/css" rel="stylesheet" href={% static "dialog.css"%}>
+        {% if user.username %}
+            <script>window.location.assign("/")</script>
+        {% endif %}
+    </head>
+    <body>
+        <div style="height: 20vh;">
+            <div class="logo-name" style="height: 100%;">
+                <img src="{% static 'icon.png' %}" style="height: 70%;">
+                <h1 style="font-size: 8vh">Titanus</h1>
+            </div>
+        </div>
+        <div class="nav-title-container">
+            <h1 class="nav-title">Đăng nhập</h1>
+        </div>
+        <div class="container">
+            <div class="nav-box">
+                <form class="nav-box-ui" method="POST">
+                    {% csrf_token %}
+                    <div style="height: 50px;"></div>
+                    <div><input name="username" class="text-box" type="text" value='{{username}}' placeholder="Tên đăng nhập"></div>
+                    <div style="height: 10px;"></div>
+                    <div><input name="password" class="text-box" type="password" placeholder="Mật khẩu"></div>
+                    <div style="height: 10px;"></div>
+                    {% if error == 1 %}
+                        <div style="height:15px"><p style="height:15px;font-size:15px;justify-content: center;margin-top:10px;color:rgb(255,255,0)">Tên đăng nhập hoặc mật khẩu chưa đúng</p></div>
+                        <div style="height: 10px;"></div>
+                    {% endif %}
+                    {% if error == 2 %}
+                        <div style="height:15px"><p style="height:15px;font-size:15px;justify-content: center;margin-top:10px;color:rgb(255,255,0)">Tài khoản chưa được xác thực</p></div>
+                        <div style="height: 10px;"></div>
+                    {% endif %}
+                    <input type="hidden" name="next" value="/"/>
+                    <div class="nav-btn-div"><input class="nav-btn" type="submit" value="Đăng ký"></div>
+                    <div style="height: 10px;"></div>
+                    <div class="other"><a href="register.html">Chưa có tài khoản? Đăng Ký Ngay</a></div>
+                    <div class="other"><a href="">Quên Mật Khẩu</a></div>
+                    <div style="height: 15px;"></div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

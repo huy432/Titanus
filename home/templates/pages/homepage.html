@@ -1,0 +1,91 @@
+{% extends "pages/homepagebase.html" %}
+
+{% load static %}
+{% block head %}
+<script src="{% static 'homepage/main.js' %}"></script>
+{% endblock head %}
+{% block content %}
+<div class="movie-label" style="margin-top: 0px;"><h3>Hot Movies</h3></div>
+            <section class="first-block">
+                <div class="image-slider">
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                        <!--
+                        <div class="carousel-item active" data-bs-interval="5000">
+                            <div class="carousel-item-img"><img src="art/art1.jpg" class="" alt="AB"></div>
+                        </div>
+                        -->
+                        {% for key,val in poster.items %}
+                            {% if key == 0 %}
+                                <div class="carousel-item active" data-bs-interval="5000"><div class="carousel-item-img"><img src={% static val %} class="" alt="AB"></div></div>
+                            {% else %}
+                                <div class="carousel-item" data-bs-interval="5000"><div class="carousel-item-img"><img src={% static val %} class="" alt="AB"></div></div>
+                            {% endif %}
+                            
+                        {% endfor %}
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="hot-episodes">
+                    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                        
+                        <div class="carousel-inner">
+                          <!--<div class="carousel-item active" data-bs-interval="7000">
+                            <img src="thumbnail/1.jpg" class="d-block w-100" alt="1">
+                          </div>-->
+                            {% for key,val in hotmovies.items %}
+                                {% if key == 0 %}
+                                    <div class="carousel-item active" data-bs-interval="7000"><img src={% static val %} class="d-block w-100" alt='{{key}}'></div>
+                                {% else %}
+                                    <div class="carousel-item" data-bs-interval="7000"><img src={% static val %} class="d-block w-100" alt='{{key}}'></div>
+                                {% endif %}
+                                
+                            {% endfor %}
+                        </div>
+                        <div class="carousel-indicators">
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                        </div>
+                      </div>
+                </div>
+                
+            </section>
+            <div class="movie-label"><h3>{{user.username}}</h3></div>
+            <section class="video-block-container" style="justify-content: left;">
+                {% block series %}
+                
+                {% endblock series %}
+            </section>
+            <div class="movie-label"><h3>Detective Conan Movies</h3></div>
+            <section class="video-block-container">
+                <!--
+                <div class="video-block" data-video-path="http://titanus.epizy.com/movie/?id=#">
+                    <div title="Detective Conan Movie 1"><img src="thumbnail/1.jpg" alt="" onclick="http://titanus.epizy.com"></div>
+                </div>
+                -->
+                    {% for movie in movies %}
+                        <div class="video-block" data-movie-id='{{movie.mid}}'>
+                                    <div title='{{movie.title}}'><img src={% static movie.thumbnail %} alt=""></div>
+                                </div>
+                    {% endfor %}
+            </section>
+{% endblock content %}
+{% block bottom %}
+<script>
+    const blocks = document.querySelectorAll(".video-block");
+    blocks.forEach(block => {
+        block.addEventListener('click',function(){
+            window.location.assign(window.location.protocol.concat("/movie/",block.dataset.movieId))
+        })
+    });
+</script>
+{% endblock bottom %}

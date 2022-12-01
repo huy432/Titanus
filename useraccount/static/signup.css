@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+@font-face {
+    font-family: ComicMS;
+    src: url('CMS.ttf');
+}
+@media screen and (max-width: 1920px) {
+    .register-title{
+        font-size: 84px;
+    }
+    
+}
+
+@media screen and (max-width: 650px) {
+    .register-title{
+        font-size: 64px;
+    }
+
+}
+.{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+}
+body{
+    background:url(bg.png) no-repeat;
+    background-size: 1960px 1100px ;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.register-btn-div{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .text-box{
+    height: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    width: 60%;
+}
+.register-box{
+    width: 350px;
+    height: 350px;
+    background-color: rgb(216, 39, 39);
+    border-radius: 5px;
+    
+}
+.register-box-ui{
+    justify-content: center;
+    align-items: center;
+}
+.register-box-ui div{
+    margin-left: 17%;
+    width: 100%;
+}
+.register-btn{
+    height: 30px;
+    width: 90px;
+    background-color: rgb(223, 79, 79);
+    font-size: 14px;
+    font: 100;
+}
+button,input{
+    font-family: 'Roboto Slab', serif;
+}
+.logo-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-name img{
+    border-radius: 4px;
+}
+.logo-name h1{
+    padding-left: 20px;
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 48px;
+    color: red;
+    -webkit-text-stroke: 2px rgb(65, 8, 8);
+}
+.register-title{
+    height: 100px;
+    color: red;
+    font-family: 'ComicMS';
+}
+.register-title-container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}

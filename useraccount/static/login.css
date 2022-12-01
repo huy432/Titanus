@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@600&display=swap');
+@font-face {
+    font-family: ComicMS;
+    src: url('CMS.ttf');
+}
+@media screen and (max-width: 1280px) {
+    .nav-title{
+        font-size: 84px;
+    }
+    
+}
+.{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: 'Roboto Slab', serif;
+    box-sizing: border-box;
+}
+body{
+    background:url(bg.png) no-repeat;
+    background-size: 1960px 100% ;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 100%;
+    height: 55vh;
+    justify-content: center;
+    display: flex;
+}
+.nav-title{
+    font-size:calc(64px + 1.5vh);
+    height: 100px;
+    color: red;
+    font-family: 'ComicMS';
+}
+.nav-title-container{
+    height: 20vh;
+}
+.nav-btn-div{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.container .text-box{
+    height: 4vh;
+    border-radius: 2px;
+    font-size: 2vh;
+    width: 60%;
+}
+.nav-box{
+    width: 40vh;
+    height: 30vh;
+    background-color: rgb(216, 39, 39);
+    border-radius: 5px;
+    
+}
+.nav-box-ui{
+    justify-content: center;
+    align-items: center;
+}
+.nav-box-ui #item{
+    margin-left: 17%;
+    width: 100%;
+    height: 5vh;
+}
+.nav-btn{
+    height: 3vh;
+    width: 9vh;
+    background-color: rgb(223, 79, 79);
+    font-size: 1.2vh;
+    font-weight: bold;
+}
+button,input{
+    font-family: 'Roboto Slab', serif;
+}
+.logo-name{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-name img{
+    border-radius: 4px;
+}
+.logo-name h1{
+    padding-left: 20px;
+    width: 100%;
+    font-family: 'Roboto Slab', serif;
+    font-size: 48px;
+    color: red;
+    -webkit-text-stroke: 2px rgb(65, 8, 8);
+}
+.nav-title-container{
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.text-box{
+    height: 100vh;
+}
+a{
+    font-size: 16px;
+    font-family: 'ComicMS';
+}
+.other{
+    text-align: right;
+    width: 80%;
+}

@@ -1,0 +1,188 @@
+@media screen and (max-width: 1200px) {
+    .main-contents{
+        grid-template-columns: 100%;
+    }
+    
+    .right-content{
+        display: none;
+    }
+}
+@media screen and (min-width: 1200px) and (max-width: 1920px) {
+    .main-contents{
+        grid-template-columns: 75% 25%;
+    }
+    
+    .right-content{
+        display: block;
+    }
+}
+
+body {
+    background-color: #eee
+}
+
+.content-container{
+    background-image:url('bg.jpg');
+    height: 200vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.content{
+    max-width: 1280px;
+    width: 100%;
+    height: 90%;
+    background-color: #170253d5;
+    border: 1px solid #ba1e68;
+}
+.avatar{
+    cursor: pointer;
+}
+.video-player-iframe{
+    width: 98%;
+    height: 98%;
+    margin: 1% 1% 1% 1%;
+}
+.video-player{
+    width: 100%;
+    aspect-ratio: 16/9;
+    background-color: rgb(0, 0, 0);
+    z-index: 2;
+    position: relative;
+}
+.main-contents{
+    width: 100%;
+    display: grid;
+    height: 97.8%;
+}
+
+.right-content{
+    background-color: #1f0b4d;
+    width: 100%;
+    height: 100%;
+    color: #ba1e68;
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 1px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #ba1e68;
+}
+.left-content{
+    width: 100%;
+}
+.content-title{
+    padding-top: 5px;
+    padding-left: 5px;
+    background-color: #170253d5;
+    color: #ba1e68;
+    height: 48px;
+    font-weight: 600;
+    font-size: 24px;
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-style: solid;
+    border-color: #ba1e68;
+}
+.toolbar{
+    height: 36px;
+    background-color: #251050;
+    border: 1px solid black;
+    margin-top: 1px;
+    display: flex;
+    justify-content: flex-end;
+}
+.lib-section-title{
+    background-color: #0c0125;
+    color: #ba1e68;
+    
+    height: 32px;
+    padding-top: 3px;
+    padding-left: 10px;
+    margin-top: 50px;
+}
+.episodes{
+    list-style:none;
+    padding-left: 10px;
+    background-color: #000000;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.episode{
+    width: 50px;
+    background-color: rgb(7, 0, 48);
+    color: #ba1e68;
+    border: 1px solid;
+    margin-top: 3px;
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+}
+.episode.active{
+    background-color: #ba1e68;
+    color: rgb(7, 0, 48);
+}
+.toolbar-button{
+    margin-top: 2px;
+    margin-right: 3px;
+    width: 90px;
+    height: 90%;
+    padding-top: 2px;
+    cursor: pointer;
+}
+.oTitle{
+    padding-top: 5px;
+    padding-left: 5px;
+    border-bottom: 1px solid #ba1e68;
+    background-color: #0c0125;
+}
+.listItem{
+    margin-top: 10px;
+    margin-left: 5%;
+    height: 96px;
+    width: 90%;
+    display: flex;
+    background-color: black;
+    color: white;
+    align-items: center;
+    border: 1px solid #ba1e68;
+    cursor: pointer;
+}
+.listItem:hover{
+    background-color: rgb(30,30,30);
+}
+.listItem img{
+    height: 100%;
+}
+.listItem p{
+    margin-left: 5px;
+    font-weight: 500;
+    margin-bottom: 0px;
+}
+.listItem p1{
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+#lightbulb{
+    background-color: #251050;
+    color: green;
+    border: 1px solid;
+}
+#lightbulb.active{
+    background-color: #251050;
+    color: red;
+    border: 1px solid;
+}
+#bulb{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.9);
+}

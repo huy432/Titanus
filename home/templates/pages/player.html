@@ -1,0 +1,55 @@
+{% extends "pages/homepagebase.html" %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'player/style.css' %}">
+    <script src="{% static 'player/main.js' %}"></script>
+{% endblock head %}
+{% block content %}
+            <div class="content-title">Detective Conan Chap 24</div>
+            <div class="main-contents">
+                <div class="left-content">
+                    <div class="video-player">
+                        <iframe class="video-player-iframe" src="" frameborder="0" scrolling="0" allowfullscreen></iframe>
+                    </div>
+                    <div class="toolbar">
+                        <div id="lightbulb" class="toolbar-button bi bi-lightbulb-fill" onclick="light()">Light: On</div>
+                    </div>
+                    <div class="lib-section-title">
+                        <h5>Detective Conan</h5>
+                    </div>
+                    <ul class="episodes">
+                        <!--<li value="" class="episode">001</li>-->
+                    </ul>
+                    </div>
+                <div class="right-content">
+                    <h5 class="oTitle">Other Video</h5>
+                    <!--<div class="listItem">
+                        <img src="a.jpg" alt="">
+                        <div style="display: block;">
+                            <p>Detective Conan</p>
+                            <p1>Chapter 283</p1>
+                        </div>
+                    </div>-->
+                    {% for choice in recommender %}
+                        <div class="listItem" data-movie-id='{{ choice.0 }}'>
+                            <img src='{% static choice.1 %}'  alt="">
+                            <div style="display: block;">
+                                <p>{{ choice.2 }}</p>
+                                <p1>{{ choice.3 }}</p1>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+{% endblock content %}
+{% block bottom %}
+<script>
+    const blocks = document.querySelectorAll(".listItem");
+    blocks.forEach(block => {
+        block.addEventListener('click',function(){
+            window.location.assign(window.location.protocol.concat("/movie/",block.dataset.movieId))
+        })
+    });
+</script>
+{% endblock bottom %}

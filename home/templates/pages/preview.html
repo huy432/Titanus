@@ -1,0 +1,51 @@
+{% extends "pages/homepagebase.html" %}
+
+{% load static %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'preview/style.css' %}">
+    <script src="{% static 'preview/main.js' %}"></script>
+{% endblock head %}
+{% block content %}
+<div class="content-title">{{title}}</div>
+    <div class="wrapper-movie-poster">
+        <div class="movie-poster">
+            <img src='{% static thumbnail %}' alt="">
+        </div>
+        <div class="movie-detail">
+            <div class="movie-title">
+                <h1>{{title}}</h1>
+            </div>
+            <p class="detail bi bi-calendar3"> 
+                Năm phát hành: 
+                <a class="nonlink" href=""> 1996</a>
+            </p>
+            <p class="detail bi bi-hourglass-split"> 
+                Thời lượng: 
+                <a class="nonlink" href="">24 phút/tập</a>
+            </p>
+            <p class="detail bi bi-star-fill" style="color: yellow;"> IMDb: 8.6</p>
+            <p class="detail">
+                Đạo diễn: 
+                <a class="link" href="#">ABC</a>
+            </p>
+            <p class="detail">Thể loại:</p>
+            <div class="movie-content-preview">
+                <div class="movie-content-preview-title">Tóm tắt nội dung</div>
+                <div class="movie-content-preview-data">
+                    <p>{{description.0}}</p>
+                    <p id="open-text" class="open-text">{{description.1}}</p>
+                </div>
+                <div class="movie-content-preview-button" onclick="openText()">Mở rộng..</div>
+            </div>
+            <button class="p-button">Xem ngay</button>
+        </div>
+    </div>
+{% endblock content %}
+{% block bottom %}
+<script>
+const btn = document.querySelector(".p-button")
+btn.addEventListener('click',function(){
+    window.location.assign(window.location.href.replace("/movie/","/player/"))
+})
+</script>
+{% endblock bottom %}

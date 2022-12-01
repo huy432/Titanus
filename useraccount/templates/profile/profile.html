@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static "profile.css" %}>
+    <title>{{name}} - Titanus </title>
+</head>
+<body>
+    <div class="container">
+        <div class="contain-content">
+            <div class="contain-avatar">
+                {% with "useravatar/avatar"|add:avatar|add:".png" as ava %}
+                    <img class="avatar" src={% static ava %}>
+                {% endwith %}
+            </div>
+            <div class="background-avatar">
+                <a class="logout-button" href="/account/logout/">Đăng xuất</a>
+            </div>
+            <div class="content">
+                <div>
+                    <h1 class="username" style="margin-bottom: 5px;">{{name}}</h1>
+                    <h4 style="text-align:center;margin-top: 3px;">@{{username}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
